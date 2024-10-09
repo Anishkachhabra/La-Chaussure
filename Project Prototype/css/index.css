@@ -57,7 +57,7 @@ label {
     overflow: hidden;
     position: fixed;
     top: 0px;
-    z-index: 200;
+    z-index: 1;
     background-color: white;
     width: 100%;
     justify-content: space-between;
@@ -242,7 +242,7 @@ label {
     background-image: url(../images/parallax/background2.jpg);
     background-attachment: fixed;
     background-size: cover;
-    -moz-background-size: cover;
+    -moz-background-size: cover; 
     -webkit-background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -279,6 +279,7 @@ label {
     background-color: #edecec;
 }
 
+ 
 .col-md-9 .formals .container.two {
     grid-row: 1/6;
     background-color: #edecec;

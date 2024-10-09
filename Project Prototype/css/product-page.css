@@ -291,8 +291,9 @@ label {
 
 .active,
 .select-color:hover {
-    background-color: rgba(0, 0, 0, 0.593);
-    color: white;
+    background-color: #edecec;
+    color: black;
+    border-color: #000;
 }
 
 .select-size {
@@ -302,8 +303,9 @@ label {
 
 .active,
 .select-size:hover {
-    background-color: rgba(0, 0, 0, 0.593);
-    color: white;
+    background-color: #edecec;
+    color: black;
+    border-color: #000;
 }
 
 .size-guide {
@@ -399,41 +401,94 @@ body.popup-active .content {
     display: inline-block;
     margin: 0px 0px 0px 20px;
     cursor: pointer;
-    color: rgba(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
     background-color: white;
     padding: 10px 15px;
     border-radius: 10px;
-    border: 2px solid rgb(0, 0, 0);
-}
-
-.wishlist:hover {
-    color: white;
-    background-color: rgba(0, 0, 0);
     border: 2px solid rgba(0, 0, 0);
 }
 
-.add-to-cart {
-    font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    cursor: pointer;
-    background-color: rgb(0, 0, 0);
-    margin: 0px 0px 0px 10px;
-    border: 2px solid rgb(255, 255, 255);
-    padding: 4px 50px;
+/* .wishlist:hover {
+    color: white;
+    background-color: black;
+} */
+
+
+.cart-button {
+    position: relative;
+    margin: 10px ;
+    padding: 0px 10px;
+    width: 250px;
+    height: 50px;
+    border: 0;
     border-radius: 10px;
+    background-color: #000000;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    transition: .3s ease-in-out;
+    overflow: hidden;
 }
 
-.add-to-cart .btn {
-    color: rgb(255, 255, 255);
+.cart-button:hover {
+    background-color: #000000;
 }
 
-.add-to-cart:hover .btn {
-    color: rgb(0, 0, 0);
+.cart-button:active {
+    transform: scale(.9);
 }
 
-.add-to-cart:hover {
-    background-color: rgb(255, 255, 255);
-    border: 2px solid rgb(0, 0, 0);
+.cart-button .bi-cart {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -10%;
+    font-size: 2em;
+    transform: translate(-50%, -50%);
+}
+
+.cart-button .bi-inboxes-fill {
+    position: absolute;
+    z-index: 4;
+    top: -20%;
+    left: 52%;
+    font-size: 0.9em;
+    transform: translate(-50%, -50%);
+}
+
+.cart-button span {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    font-size: 1.2em;
+    color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.cart-button span.add-to-cart {
+    opacity: 1;
+}
+
+.cart-button span.added {
+    opacity: 0;
+}
+
+.cart-button.clicked .bi-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked .bi-inboxes-fill {
+    animation: box 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked span.add-to-cart {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+
+.cart-button.clicked span.added {
+    animation: txt2 1.5s ease-in-out forwards;
 }
 
 .reviews,
@@ -546,6 +601,73 @@ body.popup-active .content {
     transition: 0.5s;
 }
 
+/* keyframes */
+
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+
+    40%,
+    60% {
+        left: 50%;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+@keyframes box {
+
+    0%,
+    40% {
+        top: -20%;
+    }
+
+    60% {
+        top: 41%;
+        left: 50%;
+    }
+
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}
+
+@keyframes txt1 {
+    0% {
+        opacity: 1;
+    }
+
+    20%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes txt2 {
+
+    0%,
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* media tags */
 
 @media screen and (max-width: 1024px) {
@@ -590,14 +712,14 @@ body.popup-active .content {
         height: 20px;
     }
 
-    .product-page{
+    .product-page {
         justify-content: center;
     }
 
-    .col-md-6{
+    .col-md-6 {
         width: 70%;
     }
-    
+
 }
 
 @media screen and (max-width: 769px) {
@@ -642,23 +764,26 @@ body.popup-active .content {
         height: 15px;
     }
 
-    .product-page{
+    .product-page {
         justify-content: center;
     }
 
-    .col-md-6{
+    .col-md-6 {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 390px) {
-    h1, .footer h1 {
+
+    h1,
+    .footer h1 {
         font-size: 30px;
     }
 
-    h3, .footer h3 {
+    h3,
+    .footer h3 {
         font-size: 15px;
-        
+
     }
 
     .navbar .home {
@@ -678,8 +803,7 @@ body.popup-active .content {
         font-size: 12px;
     }
 
-    .foo
-    .navbar .heart {
+    .foo .navbar .heart {
         height: 10px;
     }
 
