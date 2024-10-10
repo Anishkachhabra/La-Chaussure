@@ -221,7 +221,7 @@ label {
 .col-4:hover .btn {
     background-color: #00000097;
     color: #ffffff;
-    bottom: 15%;
+    bottom:  15%;
     transition: 0.5s;
     z-index: 100;
 }

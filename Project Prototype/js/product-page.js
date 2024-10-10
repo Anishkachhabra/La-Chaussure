@@ -119,4 +119,19 @@ function clickedHeart() {
     }, 500);
 }
 
+function addToCart(name, price, image) {
+    let cart = localStorage.getItem('cart');
+    cart = cart ? JSON.parse(cart) : [];
+
+    let existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert('Item added to cart!');
+}
 

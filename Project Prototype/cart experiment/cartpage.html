@@ -1,4 +1,47 @@
-let cart = localStorage.getItem('cart');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        /* Basic styles for the cart layout */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        .cart-item p {
+            margin: 0;
+            flex-grow: 1;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .quantity {
+            width: 30px;
+            margin: 0 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <p id="total"></p>
+    <button onclick="clearCart()">Clear Cart</button>
+
+    <script>
+        // Retrieve cart from localStorage
+        let cart = localStorage.getItem('cart');
         cart = cart ? JSON.parse(cart) : [];
 
         let cartItemsContainer = document.getElementById('cart-items');
@@ -57,3 +100,6 @@ let cart = localStorage.getItem('cart');
 
         // Initial rendering of the cart
         renderCart();
+    </script>
+</body>
+</html>
