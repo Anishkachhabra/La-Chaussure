@@ -55,12 +55,14 @@ body::-webkit-scrollbar-button {
     color: #ffffff;
 }
 
-.cart-page p, a {
+.cart-page p{
     font-family: 'Arapey', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     margin: 5px;
     color: #000000;
+    text-align: center;
 }
+
 
 .cart-page .footer p {
     font-family: 'Qwitcher Grypen', sans-serif;
@@ -68,7 +70,7 @@ body::-webkit-scrollbar-button {
     font-weight: bolder;
     font-size: 24px;
     color: #000000;
-    text-align: roduct-page
+    text-align: center;
 }
 
 /* sidebar */
@@ -156,8 +158,16 @@ label {
 }
 
 .cart-page h1{
-    margin-top: 100px;
+    margin: 150px 0px 50px 0px;
     color: #000000;
+}
+
+.cart-page button{
+    margin: 25px 0px;
+    font-family: 'Arapey', sans-serif;
+    padding: 5px 10px;
+    background-color: #000000;
+    color: #ffffff;
 }
 .cart-item {
     display: flex;
@@ -165,10 +175,9 @@ label {
     margin-bottom: 10px;
     padding: 50px;
     background-color: #ffffff;
-    border: 2px solid #00000056;
-    border-radius: 10px;
+    border-bottom: 2px solid #00000056;
     justify-content: space-between;
-    width: 600px;
+    width: 800px;
 }
 
 .cart-item img {
@@ -185,12 +194,30 @@ label {
 
 .cart-info {
     display: flex;
-    justify-content: left;
     height: 100px;
 }
 
+.cart-info .original-price {
+    color: #cdcece;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
 .cart-info h3 {
     margin: 0;
+    color: #000000;
+}
+
+.checkout{
+    text-align: center;
+}
+
+.checkout-btn{
+    font-size: 20px;
+}
+
+.emptyimg img{
+    margin-top: 100px;
+    width: 400px;
 }
 
 .remove-btn {
@@ -204,7 +231,7 @@ label {
 
 .quantity {
     width: 30px;
-    margin: 0 0px;
+    margin: 0;
     text-align: center;
     border: none;
 }
@@ -212,7 +239,7 @@ label {
 .increase-btn, .decrease-btn {
     border: none;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
 .increase-btn{
@@ -276,6 +303,7 @@ input::-webkit-inner-spin-button {
     transition: 0.5s;
 }
 
+/* keyframes */
 
 /* media tags */
 
@@ -375,6 +403,10 @@ input::-webkit-inner-spin-button {
 
     .cart-page {
         justify-content: center;
+    }
+
+    .cart-item{
+        width: 600px;
     }
 
     .col-md-6 {
