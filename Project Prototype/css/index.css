@@ -63,6 +63,10 @@ label {
     justify-content: space-between;
 }
 
+.navbar .bi-cart{
+    color: black;
+}
+
 .navbar .logo {
     height: 90px;
     z-index: 220;
