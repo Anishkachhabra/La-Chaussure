@@ -31,7 +31,7 @@ body::-webkit-scrollbar-button {
 .product-page h3 {
     background-attachment: fixed;
     font-family: 'Oswald', sans-serif;
-    font-size: 30px;
+    /* font-size: 30px; */
     line-height: 0;
     font-weight: 400;
     letter-spacing: 8px;
@@ -43,14 +43,14 @@ body::-webkit-scrollbar-button {
 
 .product-page h4 {
     font-family: 'Qwitcher Grypen', sans-serif;
-    font-size: 20px;
+    /* font-size: 20px; */
     color: #000000;
     text-align: center;
 }
 
 .product-page h5 {
     font-family: 'Arapey', sans-serif;
-    font-size: 18px;
+    /* font-size: 18px; */
     margin: 5px;
     color: #ffffff;
 }
@@ -85,6 +85,14 @@ body::-webkit-scrollbar-button {
 
 #sidebarToggle:checked+#sidebar {
     left: 0;
+}
+
+.brand {
+    font-family: 'Arapey', serif;
+    font-size: 20px;
+    /* font-weight: 700; */
+    color: #000000;
+    padding: 10px;
 }
 
 label {
@@ -676,7 +684,7 @@ body.popup-active .content {
 
 /* media tags */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 501px) {
     .navbar img {
         height: 25px;
     }
@@ -724,6 +732,32 @@ body.popup-active .content {
 
     .col-md-6 {
         width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .navbar img {
+        height: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 959px) and (min-width: 770px) {
+     h1 {
+        font-size: 60px;
+    }
+
+     h3 {
+        font-size: 20px;
     }
 
 }

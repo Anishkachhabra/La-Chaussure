@@ -20,6 +20,7 @@ function renderCart() {
         `;
         clear.style.display = 'none';
         totalElement.innerText = '';
+        checkout.innerHTML = '';
     } else {
         cart.forEach((item, index) => {
             let cartItem = document.createElement('div');
@@ -33,9 +34,10 @@ function renderCart() {
                     <p>${item.name}</p>
                     <p style="font-size:16px;"><span>Rs. ${item.price}</span>
                     <span class="original-price">Rs. ${item.originalPrice}</span></p>
-                    <p style="font-size:16px;">${item.size} | ${item.color}</p>
+                    <p class="type">${item.size} | ${item.color}</p>
                 </span>
                 </div>
+                <div class="seccon">
                 <div class="quantity-controls">
                         <button class="decrease-btn" onclick="updateQuantity(${index}, ${item.quantity} - 1)">-</button>
                         <input type="number" class="quantity" value="${item.quantity}" min="1" max="10" onchange="updateQuantity(${index}, this.value)">
@@ -45,17 +47,19 @@ function renderCart() {
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
   <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
 </svg></button>
+                </div>
                 
             `;
+            checkout.innerHTML = `
+        <button><i class="bi bi-arrow-right"></i><span class="proceed">Proceed to Checkout</span></button>
+        `;
             cartItemsContainer.appendChild(cartItem);
 
             total += item.price * item.quantity;
         });
 
         totalElement.innerText = `Total: Rs. ${total.toFixed(2)}`;
-        checkout.innerHTML = `
-        <button><i class="bi bi-arrow-right"></i><span class="proceed">Proceed to Checkout</span></button>
-        `;
+
     }
 }
 
