@@ -65,7 +65,7 @@
                 </div>
                 <img class="logo" src="../images/logo.png" alt="La Chaussure">
                 <div class="col-1" style="left: 0px;">
-                    <a href="#contact_us"><img class="home" src="../images/plus.svg" alt=""></a>
+                    <a href="../cart/add-to-cart.html"><i class="bi bi-cart"></i></a>
                     <a href="#"><img class="home heart" src="../images/heart.svg" alt=""></a>
                 </div>
         </section>
@@ -91,7 +91,7 @@
                             <form id="selection-form">
                                 <fieldset class="reset-this redo-fieldset">
                                     <legend class="reset-this redo-legend">Color</legend>
-                                    <input type="radio" name="color" id="white" value="white" hidden>
+                                    <input type="radio" name="color" id="white" value="white" checked hidden>
                                     <label class="select select-color active" for="white">White</label>
                                     <input type="radio" name="color" id="brown" value="brown" hidden>
                                     <label class="select select-color" for="brown">Brown</label>
@@ -100,15 +100,15 @@
                             <form id="size-selection-form">
                                 <fieldset class="reset-this redo-fieldset">
                                     <legend class="reset-this redo-legend">Size</legend>
-                                    <input type="radio" name="size" id="36" value="36" hidden>
+                                    <input type="radio" name="size" id="36" value="36" checked hidden>
                                     <label class="select select-size active" for="36">36</label>
                                     <input type="radio" name="size" id="37" value="37" hidden>
                                     <label class="select select-size" for="37">37</label>
                                     <input type="radio" name="size" id="38" value="38" hidden>
                                     <label class="select select-size" for="38">38</label>
-                                    <input type="radio" name="size" id="39" value="39" hidden>
+                                    <input type="radio" name="size" id="39" value="39" hidden disabled>
                                     <label class="select select-size notactive" for="39"
-                                        style="text-decoration: line-through;text-decoration-color: #777676;background-color: white;color: #000000;">39</label>
+                                        style="text-decoration: line-through;text-decoration-color: #777676;background-color: white;color: #000000;" disabled>39</label>
                                     <input type="radio" name="size" id="40" value="40" hidden>
                                     <label class="select select-size" for="40">40</label>
                                     <input type="radio" name="size" id="41" value="41" hidden>
@@ -185,7 +185,7 @@
                         <div id="wishlist-button" onclick="clickedHeart()" class="wishlist" title="Add item to Wishlist">
                             <i id="wishlist" class="bi bi-heart-fill"></i>
                         </div>
-                        <div class="add-to-cart" title="Add item to Cart" onclick="addToCart('Tough Leather Block Heels', 1299, '../images/formals/3')">
+                        <div class="add-to-cart" title="Add item to Cart" onclick="addToCart('Tough Leather Block Heels', 3867, 1299, 1999, '../images/formals/3')">
                             <button class="cart-button">
                                 <span class="add-to-cart">Add to cart</span>
                                 <span class="added">Added</span>

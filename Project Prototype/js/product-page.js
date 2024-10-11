@@ -21,12 +21,14 @@ for (var i = 0; i < sizeBtns.length; i++) {
             note.style.fontStyle = "italic";
             return; // Do nothing if the button is not active
         }
-        var currentSize = sizeHeader.getElementsByClassName("active");
-        if (currentSize.length > 0) {
-            currentSize[0].className = currentSize[0].className.replace(" active", "");
+        else {
+            var currentSize = sizeHeader.getElementsByClassName("active");
+            if (currentSize.length > 0) {
+                currentSize[0].className = currentSize[0].className.replace(" active", "");
+            }
+            this.className += " active";
+            note.innerHTML = "";
         }
-        this.className += " active";
-        note.innerHTML = "";
     });
 }
 
@@ -119,19 +121,39 @@ function clickedHeart() {
     }, 500);
 }
 
-function addToCart(name, price, image) {
+window.onload = function () {
+    // Select the default active size radio button
+    let activeSize = document.querySelector('input[name="size"].active:not(.notactive)');
+    if (activeSize) activeSize.checked = true;
+
+    // Select the default active color radio button
+    let activeColor = document.querySelector('input[name="color"].active:not(.notactive)');
+    if (activeColor) activeColor.checked = true;
+};
+
+function addToCart(name, code, price, originalPrice, image) {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const color = document.querySelector('input[name="color"]:checked').value;
+
     let cart = localStorage.getItem('cart');
     cart = cart ? JSON.parse(cart) : [];
 
-    let existingItem = cart.find(item => item.name === name);
+    let existingItem = cart.find(item => item.name === name && item.size === size && item.color === color);
     if (existingItem) {
         existingItem.quantity++;
     } else {
-        cart.push({ name, price, image, quantity: 1 });
+        cart.push({
+            name,
+            code,
+            price,
+            originalPrice,
+            image,
+            size,
+            color,
+            quantity: 1
+        });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    alert('Item added to cart!');
+    // alert(`${name} has been added to your cart!`);
 }
-
