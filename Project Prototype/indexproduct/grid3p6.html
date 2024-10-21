@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8297 - La Chaussure</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../css/product-page.css">
+</head>
+
+
+<body>
+    <div class="product-page">
+        <section>
+            <input type="checkbox" id="sidebarToggle">
+            <div id="sidebar">
+                <img style="margin-top: 100px;height: 40px;margin-bottom: 20px;" src="../images/logo.png" alt="">
+                <br>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <div class="brand">Home</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#exploreus">
+                            <div class="brand">Explore</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#formals">
+                            <div class="brand">Formals</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#casuals">
+                            <div class="brand">Party-wear</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#luxury">
+                            <div class="brand">Luxury</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#wishlist">
+                            <div class="brand">Wishlist</div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact_us">
+                            <div class="brand">Contact Us</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="navbar">
+                <div class="col-1">
+                    <label for="sidebarToggle"><img class="home" src="../images/list.svg" alt=""></label>
+                </div>
+                <img class="logo" src="../images/logo.png" alt="La Chaussure">
+                <div class="col-1" style="left: 0px;">
+                    <a href="#contact_us"><img class="home" src="../images/plus.svg" alt=""></a>
+                    <a href="#"><img class="home heart" src="../images/heart.svg" alt=""></a>
+                </div>
+        </section>
+        <section>
+            <div class="container-fluid">
+                <div class="row product-page">
+                    <div class="col-md-6">
+                        <div class="product-img">
+                            <img src="../images/luxury/5" alt="" draggable="false">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="product-description">
+                            <div class="product-id">2377</div>
+                            <div class="product-name">Ornamented Women Embellished Heels</div>
+                            <div class="product-price">Rs. 3799</div>
+                            <div class="originalMRP">
+                                <span class="mrp">MRP Rs. &nbsp;</span>
+                                <span class="original-price"> 4255</span>
+                                <span class="off-percent">&nbsp;(12% off)</span>
+                            </div>
+                            <div class="note">Price inclusive of all taxes</div>
+                            <form id="selection-form">
+                                <fieldset class="reset-this redo-fieldset">
+                                    <legend class="reset-this redo-legend">Color</legend>
+                                    <input type="radio" name="color" id="white" value="white" hidden>
+                                    <label class="select select-color active" for="white">Golden</label>
+                                    <input type="radio" name="color" id="black" value="black" hidden>
+                                    <label class="select select-color notactive" for="black" style="text-decoration: line-through;text-decoration-color: #777676;
+                                    background-color: white;color: #000000;">Silver</label>
+                                </fieldset>
+                            </form>
+                            <form id="size-selection-form">
+                                <fieldset class="reset-this redo-fieldset">
+                                    <legend class="reset-this redo-legend">Size</legend>
+                                    <input type="radio" name="size" id="36" value="36" hidden>
+                                    <label class="select select-size active" for="36">36</label>
+                                    <input type="radio" name="size" id="37" value="37" hidden>
+                                    <label class="select select-size" for="37">37</label>
+                                    <input type="radio" name="size" id="38" value="38" hidden>
+                                    <label class="select select-size" for="38">38</label>
+                                    <input type="radio" name="size" id="39" value="39" hidden>
+                                    <label class="select select-size" for="39">39</label>
+                                    <input type="radio" name="size" id="40" value="40" hidden>
+                                    <label class="select select-size" for="40">40</label>
+                                    <input type="radio" name="size" id="41" value="41" hidden>
+                                    <label class="select select-size" for="41">41</label>
+                                </fieldset>
+                            </form>
+                            <div class="size-guide">
+                                <button id="openPopup"><i class="bi bi-rulers" style="color: #000000aa;"></i> &nbsp;
+                                    Size-Guide</button>
+                            </div>
+                            <div id="popup" class="popup">
+                                <div class="popup-content">
+                                    <span id="closePopup" class="close">&times;</span>
+                                    <h2>Size Guide</h2>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>EU Size</th>
+                                                <th>US Size</th>
+                                                <th>UK Size</th>
+                                                <th>Foot Length (cm)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>36</td>
+                                                <td>5.5</td>
+                                                <td>3.5</td>
+                                                <td>22.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>37</td>
+                                                <td>6</td>
+                                                <td>4</td>
+                                                <td>23</td>
+                                            </tr>
+                                            <tr>
+                                                <td>38</td>
+                                                <td>7</td>
+                                                <td>5</td>
+                                                <td>23.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>39</td>
+                                                <td>8</td>
+                                                <td>6</td>
+                                                <td>24.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40</td>
+                                                <td>9</td>
+                                                <td>7</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>41</td>
+                                                <td>10</td>
+                                                <td>8</td>
+                                                <td>26</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p>Please measure your foot length and refer to the size chart above to find your
+                                        perfect fit. If you are between sizes, we recommend choosing the larger size for
+                                        a more comfortable fit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 buy">
+                        <div class="wishlist">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="reviews">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="product-information">
+                                <h2><button onclick="clicked1()">Reviews</button></h2>
+                                <div id="root-review" style="display: none;">
+                                    <p>There are no reviews yet.</p>
+                                    <p>Be the first to review “Aniline Leather Chique Heels”</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="product-information">
+                                <h2><button onclick="clicked2()">Description</button></h2>
+                                <div id="root-description" style="display: none;">
+                                    <p>&#128964; Ornamented Women Embellished Heels</p>
+                                    <p>&#128964; Pencil heels, has an elastic closure</p>
+                                    <p>&#128964; Shimmery and stoned upper</p>
+                                    <p>&#128964; Cushioned footbed</p>
+                                    <p>&#128964; Beaded outsole, has a pencil heel</p>
+                                    <p>&#128964; Heel height: 4.5 inches</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="product-information">
+                                <h2><button onclick="clicked3()">Details</button></h2>
+                                <div id="root-details" style="display: none;">
+                                    <b><p>Material:</p></b>
+                                    <p>Syntthetic/Stoned</p>
+                                    <b><p>Care:</p></b>
+                                    <p>Wipe with a clean, dry cloth to remove dust</p>
+                                    <b><p>Occasion:</p></b>
+                                    <p>Party</p>
+                                    <b><p>Pattern:</p></b>
+                                    <p>Solid</p>
+                                    <b><p>Fastening and Back Detail:</p></b>
+                                    <p>Elastic</p>
+                                    <b><p>Toe Shape:</p></b>
+                                    <p>Sharp pointed</p>
+                                    <b><p>Heel Type:</p></b>
+                                    <p>Pencil</p>
+                                    <b><p>Heel Height:</p></b>
+                                    <p>4.5 inches</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="similar-products">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Similar Products</h3>
+                            <div class="slider-container">
+                                <br><br>
+                                <div class="slider">
+                                    <div class="slider-items">
+                                        <div class="item">
+                                            <img src="../images/formals/2" alt="Product 1">
+
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/3" alt="Product 2">
+
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/4" alt="Product 3">
+
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/5" alt="Product 4">
+
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/6.png" alt="Product 5">
+
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/7" alt="Product 6">
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/8" alt="Product 6">
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/9" alt="Product 6">
+                                        </div>
+                                        <div class="item">
+                                            <img src="../images/formals/10 (2)" alt="Product 6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section>
+            <div class="footer">
+                <div class="footer1">
+                    <h3 style="padding-top: 60px;margin-top: 50px;">subscribe to our newsletter</h3>
+                    <p>to get updates on latest trends, sales and new collections</p>
+
+                    <form action="" style="padding-top: 30px;padding-bottom: 50px;font-family: 'Arapey', serif;">
+                        <input type="email" name="email" id="email" placeholder="Enter your email"
+                            style="border: 2px solid #cdcccc ;padding: 5px;border-radius: 5px;">
+                        <button class="btn" style="border: 2px solid #cdcccc ;padding: 5px;border-radius: 5px;"
+                            type="submit">Subscribe</button>
+                    </form>
+                    <h1>La Chaussure</h1>
+                    <p style="margin-bottom: 0px;padding-bottom: 10px;">© 2021 La Chaussure. All Rights Reserved.</p>
+                </div>
+                <div class="footer2">
+                    <img style="width: 15%;left:0px;" src="../images/lady.png" alt="">
+                    <h3 style="margin-top: -8%;margin-bottom: 20px;">contact us</h3>
+                    <p class="hover"> <img src="../images/instagram.svg" alt=""> Instagram
+                    </p>
+                    <p class="hover"><img src="../images/facebook.svg" alt=""> Facebook
+                    </p>
+                    <a href="#" style="text-decoration: none;">
+                        <h5 style="margin-top: 4%;">Back to the top &uarr; </h5>
+                    </a>
+                    <h5>© 2021 La Chaussure. All Rights Reserved.</h5>
+                    <img style="width: 50%;align-self: flex-end;margin-right: 5%;border-radius: 15px;" class="shoes"
+                        src="../images/shoes.png" alt="">
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        var header = document.getElementById("selection-form");
+        var btns = header.getElementsByClassName("select-color");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+
+        var sizeHeader = document.getElementById("size-selection-form");
+        var sizeBtns = sizeHeader.getElementsByClassName("select-size");
+        for (var i = 0; i < sizeBtns.length; i++) {
+            sizeBtns[i].addEventListener("click", function () {
+                var currentSize = sizeHeader.getElementsByClassName("active");
+                if (currentSize.length > 0) {
+                    currentSize[0].className = currentSize[0].className.replace(" active", "");
+                }
+                this.className += " active";
+            });
+        }
+
+        // Get elements
+        const popup = document.getElementById("popup");
+        const openPopupButton = document.getElementById("openPopup");
+        const closePopupButton = document.getElementById("closePopup");
+
+        // Open popup and add blur to background
+        openPopupButton.addEventListener("click", function () {
+            popup.style.display = "flex";
+            document.body.classList.add("popup-active");
+        });
+
+        // Close popup and remove blur
+        closePopupButton.addEventListener("click", function () {
+            popup.style.display = "none";
+            document.body.classList.remove("popup-active");
+        });
+
+        // Optional: Close popup when clicking outside of the popup content
+        window.addEventListener("click", function (event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+                document.body.classList.remove("popup-active");
+            }
+        });
+
+        function clicked1() {
+            var c = document.getElementById("root-review");
+            if (c.style.display === "none" || c.style.display === "") {
+                c.style.display = "block";
+            }
+            else {
+                c.style.display = "none";
+
+            }
+        }
+
+        function clicked2() {
+            var b = document.getElementById("root-description")
+            if (b.style.display === "none" || b.style.display === "") {
+                b.style.display = "block";
+            }
+            else {
+                b.style.display = "none";
+
+            }
+        }
+
+        function clicked3() {
+            var a = document.getElementById("root-details");
+            if (a.style.display === "none" || a.style.display === "") {
+                a.style.display = "block";
+            }
+            else {
+                a.style.display = "none";
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
