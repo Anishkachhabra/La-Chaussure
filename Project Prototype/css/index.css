@@ -190,6 +190,10 @@ label {
     width: 300px;
     align-self: center;
     justify-self: space-between;
+    
+}
+
+.view .col-4{
     box-shadow: 4px 4px 4px 4px #cdcdcd50;
 }
 
@@ -481,6 +485,64 @@ label {
     margin: auto;
     display: block;
     border-radius: 10px;
+  }
+
+  .celeb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 20%;
+    margin: auto;
+    opacity: 0;
+    width: 30%;
+    border-radius: 20px;
+    color: black;
+  }
+
+  .BOXIMG:hover {
+    filter: grayscale(90%);
+  }
+
+  .CELEB:hover .celeb {
+    opacity: 1;
+  }
+
+  .boximg2 {
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .boximg2:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px white;
+    opacity: 0.6;
+  }
+  
+  
+  .BOXIMG:hover {
+    transform: scaleY(1.1);
+    transition: 0.5s;
+  }
+
+/* celeb section */
+
+.celeb-section .row{
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BOXIMG {
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+    
   }
 
   .celeb {
