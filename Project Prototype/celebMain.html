@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+    }
+
+    
+   .logo {
+    position: absolute;
+    height: 8vh;
+    cursor: pointer;
+   }
+
+    .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+  .col-4 {
+    border-radius: 3px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    height: 350px;
+    width: 300px;
+  }
+
+  .IMG1{
+    height: 80%;
+    width: 80%;
+  }
+  .IMG1:hover{
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px white;
+  }
+  
+  .vid {
+    position: relative;
+    width: 100%;
+  }
+  
+</style>
+<body>
+      
+    <div class="container-fluid" style="margin-top: 90px; margin-bottom: 20px;">
+        <div class="row" style="background-color: black; height: 50px;">
+            <div class="col-12" style="height: 20px;"></div>
+            <div class="col-1"></div>
+            <div class="col-10" style=" text-align: center;  color: black">
+          </div>
+          <marquee behavior="" direction="right" style="color: white; ">latest celebrity trends</marquee>
+            <div class="col-1"></div>
+            <div class="col-12" style="height: 30px;"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4" style="border: 1px solid black; margin: 20px;">
+                <img src="images/celebrity/kendall_loafer.jpg" alt="" class="IMG1">
+                <h3><i>Givenchy</i></h3> 
+                <h4><i>Black 4g Terra Leather Loafers</i></h4>
+                <h5><i>Rs.1,50,000</i></h3>
+            </div>
+            <div class="col-4" style="border: 1px solid black; margin: 20px">
+                <img src="images/celebrity/Anne_mules1.webp" alt="" class="IMG1">
+                <h3><i>Charles & Keith</i></h3> 
+                <h4><i>Open-Toe Heeled Mules</i></h4>
+                <h5><i>Rs.7,999</i></h3>
+            </div>
+            <div class="col-4" style="border: 1px solid black; margin: 20px">
+                <img src="images/celebrity/Dakota_boots1.webp" alt="" class="IMG1">
+                <h3><i>Gimmy Choo</i></h3> 
+                <h4><i>Cece Over The Knee Boot 80</i></h4>
+                <h5><i>Rs.1,50,000</i></h3>
+            </div>
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="video-hero" style="width: 100%">
+        <video class="vid" autoplay loop muted plays-inline>
+          <source src="celebrity/video.mp4" />
+        </video>
+      </div>
+    
+
+</body>
+</html>
