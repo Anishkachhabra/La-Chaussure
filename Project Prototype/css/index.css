@@ -61,7 +61,7 @@ label {
     background-color: white;
     width: 100%;
     justify-content: space-between;
-    font-size: 20px;
+    
 }
 
 .navbar .bi-cart{
@@ -79,6 +79,7 @@ label {
 
 .navbar .home {
     margin-left: 15px;
+    font-size: 20px;
 }
 
 
@@ -178,9 +179,9 @@ label {
     background-color: #00000059;
     margin: 20px auto;
     justify-self: center;
-}
+} 
 
-.col-4 {
+.view .col-4 {
     margin: 20px;
     height: 370px;
     width: 300px;
@@ -193,7 +194,7 @@ label {
     box-shadow: 4px 4px 4px 4px #cdcdcd50;
 }
 
-.col-4 img {
+.view .col-4 img {
     margin: 10px;
     margin-top: 20px;
     height: 300px;
@@ -527,11 +528,22 @@ label {
 
 /* celeb section */
 
-.celeb-section .row{
+.row{
     /* margin: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.celebrity .col-4{
+    margin: 20px;
+    height: 450px;
+    width: auto;
+    padding: 10px;
+    background-color: #edecec;
+        align-self: center;
+    justify-self: space-between;
+    justify-content: center;
 }
 
 .BOXIMG {
@@ -548,12 +560,14 @@ label {
     justify-content: center;
     align-items: center;
     position: relative;
-    bottom: 20%;
+    bottom: 30%;
     margin: auto;
     opacity: 0;
     width: 30%;
     border-radius: 20px;
-    color: black;
+    color: white;
+    background-color: #000000;
+    text-decoration: none;
   }
 
   .BOXIMG:hover {
@@ -562,6 +576,18 @@ label {
 
   .CELEB:hover .celeb {
     opacity: 1;
+  }
+
+  .CELEB:hover h5{
+    padding-top: 20px;
+  }
+
+  .CELEB h5{
+    font-family: 'Arapey', serif;
+    font-size: 20px;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
   }
 
   .boximg2 {
@@ -578,10 +604,11 @@ label {
   }
   
   
-  .BOXIMG:hover {
-    transform: scaleY(1.1);
+  .BOXIMG:hover{
+    transform: scale(1.1);
     transition: 0.5s;
   }
+
 
 /* parallax three */
 .parallax .thirdparallax {
