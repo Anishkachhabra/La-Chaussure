@@ -61,10 +61,11 @@ label {
     background-color: white;
     width: 100%;
     justify-content: space-between;
+    font-size: 20px;
 }
 
 .navbar .bi-cart{
-    color: black;
+    color: black;;
 }
 
 .navbar .logo {
@@ -75,11 +76,6 @@ label {
 .navbar img {
     height: 30px;
 }
-
-.navbar .heart {
-    height: 20px;
-}
-
 
 .navbar .home {
     margin-left: 15px;
@@ -190,7 +186,7 @@ label {
     width: 300px;
     align-self: center;
     justify-self: space-between;
-    
+    justify-content: center;
 }
 
 .view .col-4{
@@ -479,6 +475,8 @@ label {
     background-image: url(../images/slider/6th.png);
 } */
 /* celeb section */
+
+
 .BOXIMG {
     height: 90%;
     width: 90%;

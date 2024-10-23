@@ -16,7 +16,7 @@ function renderCart() {
         <div class="emptyimg"><img src="../images/emptycart.png"></div>
         <p>There is nothing in here.</p>
         <p>Your favourite shoe is waiting for you.</p>
-        <p><a href="../wishlist.html"><button class="backtowishlist">Go back to Wishlist</button></a></p>
+        <p><a href="../index.html"><button class="backtowishlist">Continue Shopping</button></a></p>
         `;
         clear.style.display = 'none';
         totalElement.innerText = '';

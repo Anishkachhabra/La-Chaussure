@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="../css/add-to-cart.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+        }
+        .summary {
+            margin-top: 20px;
+        }
+        .summary h2 {
+            margin-bottom: 10px;
+        }
+        .total, .discount {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="cartContainer"></div>
+    
+    <div class="summary">
+        <h2>Summary</h2>
+        <div class="total">
+            <span>Total Price:</span>
+            <span id="totalPrice">$0.00</span>
+        </div>
+        <div class="discount">
+            <span>Discount (10%):</span>
+            <span id="discountAmount">-$0.00</span>
+        </div>
+        <div class="total">
+            <span>Final Price:</span>
+            <span id="finalPrice">$0.00</span>
+        </div>
+    </div>
+    <button class="button" onclick="placeOrder()">Place Order</button>
+    <script>
+        // Load cart items from localStorage
+        function loadCart() {
+            const cartContainer = document.getElementById('cartContainer');
+            let cart = localStorage.getItem('cart');
+            cart = cart ? JSON.parse(cart) : [];
+            
+            let totalPrice = 0;
+            let discount = 0;
+
+            cart.forEach(item => {
+                let itemPrice = item.price * item.quantity;
+                totalPrice += itemPrice;
+
+                // Check if the item has a discount (based on class or special offer)
+                if (item.class && item.class.includes('special-offer')) {
+                    discount += itemPrice * 0.10;  // 10% discount
+                }
+
+                // Display cart item
+                let cartItem = `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div>
+                            <p>${item.name}</p>
+                            <p>Size: ${item.size}, Color: ${item.color}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                            <p>Price: $${item.price}</p>
+                        </div>
+                    </div>
+                `;
+                cartContainer.insertAdjacentHTML('beforeend', cartItem);
+            });
+
+            // Calculate the final price after discount
+            let finalPrice = totalPrice - discount;
+
+            // Update the UI with prices
+            document.getElementById('totalPrice').innerText = `$${totalPrice.toFixed(2)}`;
+            document.getElementById('discountAmount').innerText = `-$${discount.toFixed(2)}`;
+            document.getElementById('finalPrice').innerText = `$${finalPrice.toFixed(2)}`;
+        }
+
+        // Function to place an order (you can customize this with actual logic)
+        function placeOrder() {
+            alert("Order placed successfully!");
+            localStorage.removeItem('cart');
+        }
+
+        // Load cart when the page is loaded
+        window.onload = loadCart;
+    </script>
+</body>
+</html>
