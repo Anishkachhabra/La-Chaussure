@@ -51,7 +51,7 @@ function renderCart() {
                 
             `;
             checkout.innerHTML = `
-        <button><i class="bi bi-arrow-right"></i><span class="proceed">Proceed to Checkout</span></button>
+        <a href="checkout.html"><button><i class="bi bi-arrow-right"></i><span class="proceed">Place Order!</span></button></a>
         `;
             cartItemsContainer.appendChild(cartItem);
 
@@ -61,6 +61,12 @@ function renderCart() {
         totalElement.innerText = `Total: Rs. ${total.toFixed(2)}`;
 
     }
+}
+
+
+function placeOrder() {
+    clearCart();
+    alert('Order Placed Successfully');
 }
 
 function removeFromCart(index) {
