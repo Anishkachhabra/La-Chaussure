@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+}
+div.row.nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+position: absolute;
+height: 8vh;
+cursor: pointer;
+}
+
+.row {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.row.nav .col-4 img{
+    height: 90px;
+}
+
+.Card.col-4 {
+border-radius: 3px;
+padding-top: 20px;
+padding-bottom: 20px;
+text-align: center;
+height: 350px;
+width: 300px;
+}
+
+.IMG1{
+height: 80%;
+width: 80%;
+}
+.IMG1:hover{
+box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3), -10px -10px 10px white;
+}
+
+.vid {
+position: relative;
+width: 100%;
+}
+.heading{
+margin-top: 30px;
+text-align: center;
+}
+
+.navbar .home {
+    margin-left: 15px;
+    font-size: 20px;
+    color: black;
+    height: 20px;
+}
+
+/* footer */
+.footer .footer1 {
+    background-color: #e8e8e8;
+    color: #ffffff;
+    /* height: 400px; */
+    margin: 10px;
+    margin-bottom: 0px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.footer .footer2 {
+    background-color: #c5e3ec;
+    color: #ffffff;
+    /* height: 400px; */
+    margin: 10px;
+    margin-top: 0px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer1 .btn {
+    background-color: #bec3c9;
+    color: #ffffff;
+}
+
+.footer .footer1 .btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer .footer2 h5 {
+    color: #ffffff;
+}
+
+.footer .footer2 h5:hover {
+    color: #000000;
+    transform: scaleY(1.1);
+    transition: 0.5s;
+}
+
+.footer .footer2 .hover:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}

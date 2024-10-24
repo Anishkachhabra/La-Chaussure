@@ -6,245 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
     <link rel="stylesheet" href="../css/add-to-cart.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: grid;
-            justify-content: center;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cart-item img {
-            width: 100px;
-            height: 100px;
-        }
-
-        .summary {
-            margin-top: 20px;
-        }
-
-        .summary h2 {
-            margin-bottom: 10px;
-        }
-
-        .total,
-        .discount {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .button {
-            padding: 10px;
-            background-color: #28a745;
-            color: #fff;
-            cursor: pointer;
-            border: none;
-        }
-
-        .remove-btn,
-        .quantity-controls {
-            margin-top: 10px;
-        }
-
-        .coupon {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .coupon input {
-            padding: 5px;
-            width: 70%;
-        }
-
-        .coupon button {
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border: none;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 5px;
-            width: 30%;
-            text-align: center;
-        }
-
-        .close-btn {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/checkout.css" class="css">
 </head>
 
 <body>
-    <h1>Checkout</h1>
-    <div id="cartContainer"></div>
+    <section>
+        <div class="navbar">
+            <div class="col-1">
+                <a href="../index.html">
+                    <img class="home" src="../images/house-heart-fill.svg" alt="" style="">
+                </a>
+            </div>
+            <img class="logo" src="../images/logo.png" alt="La Chaussure">
+            <div class="col-1" style="left: 0px;">
+                <a href="../cart/add-to-cart.html"><i class="bi bi-cart"></i></a>
+            </div>
+    </section>
+    <section class="checkout">
+        <h1>Checkout</h1>
+        <div id="cartContainer"></div>
 
-    <div class="summary">
-        <h2>Summary</h2>
-        <div class="total">
-            <span>Total Price:</span>
-            <span id="totalPrice">$0.00</span>
+        <div class="summary">
+            <h2>Summary</h2>
+            <div class="total">
+                <span>Total Price:</span>
+                <span id="totalPrice">$0.00</span>
+            </div>
+            <div class="discount">
+                <span>Discount (10%):</span>
+                <span id="discountAmount">-$0.00</span>
+            </div>
+            <div class="total">
+                <span>Final Price:</span>
+                <span id="finalPrice">$0.00</span>
+            </div>
         </div>
-        <div class="discount">
-            <span>Discount (10%):</span>
-            <span id="discountAmount">-$0.00</span>
+
+        <div class="coupon">
+            <input type="text" id="couponCode" placeholder="Enter coupon code">
+            <button onclick="applyCoupon()">Apply Coupon</button>
         </div>
-        <div class="total">
-            <span>Final Price:</span>
-            <span id="finalPrice">$0.00</span>
+        <div id="note"></div>
+        <button class="button" onclick="placeOrder()">Place Order</button>
+
+        <!-- Modal Structure -->
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <h3>Order</h3><h3> Successful!</h3>
+                <br>
+                <p>Your order has been placed successfully.</p> 
+                <br>
+                <a href="add-to-cart.html">
+                    <button class="close-btn" onclick="closeModal()">Close</button>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="coupon">
-        <input type="text" id="couponCode" placeholder="Enter coupon code">
-        <button onclick="applyCoupon()">Apply Coupon</button>
-    </div>
-    <div id="note"></div>
-    <button class="button" onclick="placeOrder()">Place Order</button>
-
-    <!-- Modal Structure -->
-    <div id="orderModal" class="modal">
-        <div class="modal-content">
-            <h2>Order Successful!</h2>
-            <p>Your order has been placed.</p>
-            <button class="close-btn" onclick="closeModal()">Close</button>
-        </div>
-    </div>
-
-    <script>
-        let appliedCoupon = null;
-
-        // List of valid coupons
-        const coupons = {
-            "LAFIRST10": { discount: 10 }
-        };
-
-        // Load cart items from localStorage
-        function loadCart() {
-            const cartContainer = document.getElementById('cartContainer');
-            cartContainer.innerHTML = '';
-            let cart = localStorage.getItem('cart');
-            cart = cart ? JSON.parse(cart) : [];
-
-            let totalPrice = 0;
-            let discount = 0;
-
-            cart.forEach((item, index) => {
-                let itemPrice = item.price * item.quantity;
-                totalPrice += itemPrice;
-
-                // Check if the item has a discount applied via coupon
-                if (appliedCoupon) {
-                    discount += itemPrice * (appliedCoupon.discount / 100);
-                }
-
-                // Display cart item
-                let cartItem = `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}">
-                        <div>
-                            <p>${item.name}</p>
-                            <p>Size: ${item.size}, Color: ${item.color}</p>
-                            <p>Quantity: 
-                                <button onclick="updateQuantity(${index}, ${item.quantity - 1})">-</button>
-                                <span>${item.quantity}</span>
-                                <button onclick="updateQuantity(${index}, ${item.quantity + 1})">+</button>
-                            </p>
-                            <p>Price: $${item.price.toFixed(2)}</p>
-                            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-                        </div>
-                    </div>
-                `;
-                cartContainer.insertAdjacentHTML('beforeend', cartItem);
-            });
-
-            // Calculate the final price after discount
-            let finalPrice = totalPrice - discount;
-
-            // Update the UI with prices
-            document.getElementById('totalPrice').innerText = `$${totalPrice.toFixed(2)}`;
-            document.getElementById('discountAmount').innerText = `-$${discount.toFixed(2)}`;
-            document.getElementById('finalPrice').innerText = `$${finalPrice.toFixed(2)}`;
-        }
-
-        // Function to update quantity
-        function updateQuantity(index, quantity) {
-            if (quantity < 1) return;
-            let cart = JSON.parse(localStorage.getItem('cart'));
-            cart[index].quantity = quantity;
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCart();
-        }
-
-        // Function to remove an item
-        function removeItem(index) {
-            let cart = JSON.parse(localStorage.getItem('cart'));
-            cart.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCart();
-        }
-
-        // Apply coupon function
-        function applyCoupon() {
-            const couponCode = document.getElementById('couponCode').value.toUpperCase();
-            if (coupons[couponCode]) {
-                appliedCoupon = coupons[couponCode];
-                alert('Coupon applied successfully!');
-                document.getElementById('couponCode').value = '';  // Clear the coupon input field
-            } else {
-                appliedCoupon = null;
-                alert('Invalid coupon code');
-            }
-            loadCart();
-        }
-
-        // Show modal on order placement
-        function placeOrder() {
-            const modal = document.getElementById('orderModal');
-            modal.style.display = "block";  // Show modal
-            localStorage.removeItem('cart');  // Clear cart
-            loadCart();  // Reload cart
-        }
-
-        // Close the modal
-        function closeModal() {
-            const modal = document.getElementById('orderModal');
-            modal.style.display = "none";
-        }
-
-        // Load cart when the page is loaded
-        window.onload = loadCart;
-    </script>
+    <script src="../js/checkout.js"></script>
 </body>
 
 </html>

@@ -224,6 +224,11 @@ label {
     font-size: 20px;
 }
 
+.emptyimg{
+    display: flex;
+    justify-content: center;
+}
+
 .emptyimg img{
     margin-top: 40px;
     width: 400px;
@@ -431,6 +436,10 @@ input::-webkit-inner-spin-button {
         font-size: 10px;
     }
 
+    h1{
+        font-size: 20px;
+    }
+
 }
 
 @media screen and (max-width: 959px) and (min-width: 770px) {
@@ -541,4 +550,11 @@ input::-webkit-inner-spin-button {
         height: 10px;
     }
 
+    .emptyimg img{
+        width: 200px;
+    }
+
+    h1.main-heading{
+        font-size: 30px;
+    }
 }

@@ -1,0 +1,201 @@
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.checkout {
+    display: grid;
+    justify-content: center;
+    margin-top: 100px;
+}
+.checkout h1 {
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+.checkout h2 {
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    color: #000;
+    letter-spacing: 6px;
+}
+
+.checkout h3 {
+    background-attachment: fixed;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    line-height: 0;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    text-align: center;
+}
+
+.checkout h4 {
+    font-family: 'Qwitcher Grypen', sans-serif;
+    /* font-size: 20px; */
+    color: #000000;
+    text-align: center;
+}
+
+.checkout h5 {
+    font-family: 'Arapey', sans-serif;
+    /* font-size: 18px; */
+    margin: 5px;
+    color: #ffffff;
+}
+
+.checkout p{
+    font-family: 'Arapey', sans-serif;
+    font-size: 20px;
+    margin: 5px;
+    color: #000000;
+    text-align: center;
+}
+
+
+.checkout .footer p {
+    font-family: 'Qwitcher Grypen', sans-serif;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+}
+
+.checkout span{
+    font-family: 'Arapey', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.summary {
+    margin-top: 20px;
+}
+
+.summary h2 {
+    margin-bottom: 10px;
+}
+
+.total,
+.discount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.remove-btn,
+.quantity-controls {
+    margin-top: 10px;
+}
+
+.coupon {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.coupon input {
+    padding: 5px;
+    font-family: 'Arapey', sans-serif;
+    width: 70%;
+}
+
+.coupon button {
+    padding: 5px 10px;
+    background-color: #000000;
+    font-family: 'Arapey', sans-serif;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.button{
+    background-color: #000000;
+    color: white;
+    margin: 0px 120px;
+    padding: 13px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px 0px;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+
+.close-btn {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 500px)and (min-width: 400px){
+    .modal-content h3{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .modal-content h3{
+        font-size: 15px;
+    }
+}

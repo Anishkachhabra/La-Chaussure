@@ -49,18 +49,18 @@
                             <form id="selection-form">
                                 <fieldset class="reset-this redo-fieldset">
                                     <legend class="reset-this redo-legend">Color</legend>
-                                    <input type="radio" name="color" id="white" value="white" hidden>
+                                    <input type="radio" name="color" id="white" value="white" checked hidden>
                                     <label class="select select-color active" for="white">White</label>
-                                    <input type="radio" name="color" id="black" value="black" hidden>
-                                    <label class="select select-color" for="black">Black</label>
+                                    <input type="radio" name="color" id="black" value="black" disabled hidden>
+                                    <label class="select select-color notactive" for="black">Black</label>
                                 </fieldset>
                             </form>
                             <form id="size-selection-form">
                                 <fieldset class="reset-this redo-fieldset">
                                     <legend class="reset-this redo-legend">Size</legend>
-                                    <input type="radio" name="size" id="36" value="36" hidden>
+                                    <input type="radio" name="size" id="36" value="36" disabled hidden>
                                     <label class="select select-size notactive" for="36" style="text-decoration: line-through;text-decoration-color: #777676;background-color: white;color: #000000;">36</label>
-                                    <input type="radio" name="size" id="37" value="37" hidden>
+                                    <input type="radio" name="size" id="37" value="37" checked hidden>
                                     <label class="select select-size active" for="37">37</label>
                                     <input type="radio" name="size" id="38" value="38" hidden>
                                     <label class="select select-size" for="38">38</label>
@@ -68,7 +68,7 @@
                                     <label class="select select-size" for="39">39</label>
                                     <input type="radio" name="size" id="40" value="40" hidden>
                                     <label class="select select-size" for="40">40</label>
-                                    <input type="radio" name="size" id="41" value="41" hidden>
+                                    <input type="radio" name="size" id="41" value="41"  disabled hidden>
                                     <label class="select select-size notactive" for="41" style="text-decoration: line-through;text-decoration-color: #777676;background-color: white;color: #000000;">41</label>
                                 </fieldset>
                                 <p id="Note"></p>
@@ -142,7 +142,7 @@
                         <div id="wishlist-button" onclick="clickedHeart()" class="wishlist" title="Add item to Wishlist">
                             <i id="wishlist" class="bi bi-heart-fill"></i>
                         </div>
-                        <div class="add-to-cart" title="Add item to Cart" onclick="addToCart('Solid Black Pointed Heels', 6247, 999, 1899, '../images/formals/6.png')">
+                        <div class="add-to-cart" title="Add item to Cart" onclick="addToCart('Solid Black Pointed Heels', 6247, 999, 1189, '../images/formals/6.png')">
                             <button class="cart-button">
                                 <span class="add-to-cart">Add to cart</span>
                                 <span class="added">Added</span>
