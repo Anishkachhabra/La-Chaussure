@@ -8,6 +8,7 @@ let checkout = document.getElementById('checkout');
 let total = 0;
 
 function renderCart() {
+
     cartItemsContainer.innerHTML = '';
     total = 0;
 

@@ -96,10 +96,27 @@ cartButtons.forEach(button => {
     button.addEventListener('click', cartClick);
 });
 
-function cartClick() {
-    let button = this;
-    button.classList.add('clicked');
+// Function to handle the cart button click with authentication check
+function cartClick(event) {
+    const isAuthenticated = true; // For testing purposes   
+    // Redirect to login if not authenticated
+    if (isAuthenticated) {
+        let button = this;
+        button.classList.add("clicked");
+    } else {
+        window.location.href = "http://localhost:3000"; // Adjust to your login page URL
+        isAuthenticated = true;
+    }
 }
+
+// Attach the cartClick function to all "Add to Cart" buttons
+document.addEventListener("DOMContentLoaded", function () {
+    const cartButtons = document.querySelectorAll(".cart-button"); // Update selector as needed
+    cartButtons.forEach(button => {
+        button.addEventListener("click", cartClick);
+    });
+});
+
 
 let heart = document.getElementById("wishlist");
 let heartButton = document.getElementById("wishlist-button");
